@@ -4,6 +4,8 @@ import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import com.sun.xml.internal.ws.model.wsdl.WSDLOutputImpl;
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -31,7 +33,7 @@ public class Main {
 
         System.out.println(filterLongWords(arr1, 3));          // ["cat"]
         System.out.println(filterLongWords(arr1, 5));          // ["cat", "bird"]
-        System.out.println(filterLongWords(arr1, 6));          // []
+        System.out.println(filterLongWords(arr1, 2));          // []
     }
 
     public static double maxOfTwoNumbers(double num1, double num2) {
@@ -90,11 +92,13 @@ public class Main {
         return highestCount;
     }
     // filterLongWords() takes an Array of Words and a number i, returns an Array with words longer than i
-    public static String[] filterLongWords(String[] arr, int num){
-        String[] filteredArr = {};
+    public static ArrayList<String> filterLongWords(String[] arr, int num){
+        int sizeCount = 0;
+        ArrayList<String> filteredArr = new ArrayList<String>();
         for(int i = 0; i < arr.length; i++){
-           if(arr[i].length() < num){
+           if(arr[i].length() <= num){
                filteredArr.add(arr[i]);
+               sizeCount++;
            }
 
         }
