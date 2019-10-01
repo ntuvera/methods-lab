@@ -23,15 +23,15 @@ public class Main {
 
         System.out.println(reverseString("Tested"));            // "detseT"
         System.out.println(reverseString("jag testar"));        // "ratset gaj"
-        System.out.println(reverseString("jag testar"));        // "ratset gaj"
-        System.out.println(reverseString("jag testar"));        // "ratset gaj"
 
-//        System.out.println(findLongestWord(["cat", "bird", "lizard"]));             // 6
-//        System.out.println(findLongestWord(["kangaroo", "bird", "lizard"]));        // 8
+        String [] arr1 = {"cat", "bird", "lizard"};
+        System.out.println(findLongestWord(arr1));             // 6
+        String [] arr2 = {"kangaroo", "bird", "lizard"};
+        System.out.println(findLongestWord(arr2));        // 8
 
-//        System.out.println(filterLongWords(["cat", "bird", "lizard"], 3));          // ["cat"]
-//        System.out.println(filterLongWords(["cat", "bird", "lizard"], 5));          // ["cat", "bird"]
-//        System.out.println(filterLongWords(["cat", "bird", "lizard"], 6));          // []
+        System.out.println(filterLongWords(arr1, 3));          // ["cat"]
+        System.out.println(filterLongWords(arr1, 5));          // ["cat", "bird"]
+        System.out.println(filterLongWords(arr1, 6));          // []
     }
 
     public static double maxOfTwoNumbers(double num1, double num2) {
@@ -90,7 +90,17 @@ public class Main {
         return highestCount;
     }
     // filterLongWords() takes an Array of Words and a number i, returns an Array with words longer than i
+    public static String[] filterLongWords(String[] arr, int num){
+        String[] filteredArr = {};
+        for(int i = 0; i < arr.length; i++){
+           if(arr[i].length() < num){
+               filteredArr.add(arr[i]);
+           }
 
+        }
+
+        return filteredArr;
+    }
 }
 
 
